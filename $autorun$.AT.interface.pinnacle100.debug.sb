@@ -1,0 +1,50 @@
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Copyright (c) 2018, Laird Connectivity                                     ++
+//                                                                            ++
+// Permission to use, copy, modify, and/or distribute this software for any   ++
+// purpose with or without fee is hereby granted, provided that the above     ++
+// copyright notice and this permission notice appear in all copies.          ++
+//                                                                            ++
+// THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES   ++
+// WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF           ++
+// MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR    ++
+// ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES     ++
+// WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN      ++
+// ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR ++
+// IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.                ++
+//                                                                            ++
+// SPDX-License-Identifier:ISC                                                ++
+//                                                                            ++
+// ************************************************************************** ++
+// A smartBASIC application that exposes an AT Interface to control a VSP     ++
+// or non-VSP connection and advertise or scan that will run on the Pinnacle  ++
+// modem with the following features:-                                        ++
+//    + AT+GCTM command enabled to query peer's GATT table schema             ++
+//    + If error handler called then module will reset and restart            ++
+//    + Long Range Connection capability enabled                              ++
+// ************************************************************************** ++
+//                                                                            ++
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++                                                                      ++
+// +++++  When UwTerminalX downloads the app to the module it will be saved    ++
+// +++++  as a file with filename $autorun$ which means it will run           ++
+// +++++  automatically on reset.                                             ++
+// +++++  The File System can be queried using the command AT+DIR             ++
+// +++++                                                                      ++
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//
+
+//******************************************************************************
+// Compiler/Debug options
+//******************************************************************************
+//
+// See $LIB$.AT.interface.sb for conditional compilation masks
+//
+#set $cmpif, 0xA8B6080F
+
+
+#include "$LIB$.app.defines.sb"
+#include "$LIB$.defines.common.sb"
+#include "$LIB$.defines.pinnacle100.sb"
+#include "$LIB$.sreg.defaults.pinnacle100.sb"
+#include "$LIB$.AT.interface.sb"

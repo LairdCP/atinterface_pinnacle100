@@ -1,6 +1,7 @@
 /*.uwc
 */*.uwc
 */*/*.uwc
+RegrTest/_sbApps4Regr/BL654/$autorun$.AT.interface.BL654._.uwc
 
 /*.tws
 */*.tws
@@ -9,12 +10,21 @@
 /*.aut.txt
 */*.aut.txt
 */*/*.aut.txt
+*/*/*/*.aut.txt
 
-*/RegrTest/Log/*
-*/RegrTest/Log/*/*
-*/RegrTestBL600/Log/*
-*/RegrTestBL600/Log/*/*
+RegrTest/*/*/Log/*
 
-StringPlayer*.exe
-$autorun$.AT.interface.0*.sb
-$TEMP$.*.sb
+*.xlsx
+
+Archive/*
+Archive/*/*
+Archive/*/*/*
+
+sreg.defaults.creation.*.sb
+
+Deploy/*
+
+/*.lnk
+*/*.lnk
+*/*/*.lnk
+

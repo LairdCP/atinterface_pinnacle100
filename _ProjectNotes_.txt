@@ -1,0 +1,94 @@
+==================
+COMMANDS
+==================
+
+ATS regnum=val
+ATS regnum?
+ATS =?
+ATI n
+ATD addr
+ATZ 
+AT%S regnum="val"
+AT%S regnum?
+AT%S =?
+AT&F
+AT&W
+AT+LADV <advType> <,advIntervalMs>
+AT+LADV <X>
+AT+LSCN <timeout_sec> <,"escaped_pattern"> <,rssi>
+AT+LSCN <X>
+AT+LCON addr
+AT+LDSC hIdx
+AT+SIOC sionum ,func ,subfunc
+AT+SIOR sionum
+AT+SIOW sionum,[0|1]
+AT+LVSP
+AT+BNDT addr
+AT+BNDP addr
+AT_BNDD addr
+AT+BNDX
+AT+PAIR hIdx
+AT+PRSP hIdx,[<Y|y|N|n>  | <32hexdigitnumber> | <decimaldigitnumber<=999999>]
+AT+LENC hIdx
+AT+UUID u,16bitUuid,u
+AT+UUID u,16bitUuid    
+AT+UUID u,32bitHex     
+AT+GCTM hIdx                     //map gatt table in remote
+AT+GCFA hIdx,s,x,c,y<,d,z>       //find attribute handle for characteristic or descriptor
+AT+GCRD hIdx,hAttr,offset        //read attribute
+AT+GSSB u                        //Service Begin
+AT+GSSE                          //Service End
+AT+GSMD m,rdr,wrr,l              //Metadata 'm' is an index in the range 1...N
+AT+GSCB u,pr,m{V}<,m{C}<,m{S}>>  //Char Begin m{XXX} is the metadata index and 0 means not provided.
+AT+GSCE hexdata                  //Char End -- will return an index that identifies the char object just added
+AT+GSWC i,hexdata                //write data into char 'i'
+AT+GSNO i,data                   //Notify to client value of a characteristic
+AT+GSIC i,data                   //Indicate to client value of a characteristic, will return ERROR 14 if indicates are not enabled
+AT+GCWA hIdx,hAttr,data          //write attribute with ack
+AT+GCWC hIdx,hAttr,data          //write attribute without ack
+
+AT+NOPN s <,writable>                   //NFC open with ndeg buffer size 's' and writable =1 if it is
+AT+NCLS                                 //NFC close
+AT+NRST                                 //NFC reset ndef buffer that was created using AT+NFOP
+AT+NRAT "lang","message"                //NFC Add text record with 'message' in language specificied
+AT+NRAG tnf,"type","val0"               //NFC Add generic record
+AT+NCMT                                 //NFC commit the message
+AT+NSEN                                 //NFC sense enable
+AT+NSDS                                 //NFC sense disable
+
+AT+ARST <conn>                   //Non Vsp Advert reports reset ( conn==0 or 1) default = 1
+AT+AARA tag,"data"               //Append AD to NonVsp Advert report 
+AT+ASRA tag,"data"               //Append AD to NonVsp Scan report   
+AT+ACMT                          //Commit NonVspo advert & scan reports if not in VSP  mode
+AT+SFMT <fmt>                    //scan advert report format type, default fmt=0
+
+
+==================
+RESPONSES
+==================
+OK
+ERROR n
+CONNECT 0,addr,i,s,v
+RING addr,<U|T>
+ENCRYPT
+NOCARRIER n
+discon c,r
+encrypt c
+connect c,addr,i,s,v
+scanend
+dispcode x
+passkey?
+oobkey?
+xxkey?
+AR:n,o,hexdata    //Gattc Attribute Read - OK
+AW:n,status       //Gattc Attribure Write - OK or FAIL, status==0 for OK
+FC:n,hAttr,prop   //Attribute of characteristic handle found in connection n which has property 'prop'
+FD:n,hAttr        //Attribute of descriptor handle found in connection n
+AK:i              //An Indicate has been acked for char i
+WR:i,hexdata      //data written into char 'i' by clint
+CC:i,val          //data written into cccd of char 'i' by client
+SC:i,val          //data written into sccd of char 'i' by client
+IN:hconn,hattr,hexdata   //incoming notification or indication
+AS:n,errStatus    //Gattc Attribute Read - Fail and nStatus supplied
+
+AD:n,respcode     //Gattc Attribute Read - BleGattcReadData() failed

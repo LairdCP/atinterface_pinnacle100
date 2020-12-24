@@ -1,0 +1,10 @@
+#set $cmpif, 0xF7FF4003
+
+//Terminator for debug messages
+#cmpif 0x00000003 :  dim dbgStart$ : dbgStart$ = "\n## "
+#cmpif 0x00000003 :  dim dbgTerm$  : dbgTerm$  = "\r\n"
+
+#include "$LIB$.app.defines.sb"
+#include "$LIB$.defines.common.sb"
+#include "$LIB$.defines.pinnacle100.sb"
+#include "$LIB$.sreg.defaults.creation.sb"

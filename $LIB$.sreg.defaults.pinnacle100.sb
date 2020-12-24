@@ -1,0 +1,120 @@
+//#############################################################################
+// LibFile : "$LIB$.sreg.defaults.pinnacle100.sb"
+//#############################################################################
+//
+// It is very highly recommended that this file is NOT modified by non-Laird
+// Connectivity developers unless you request it to be updated in the master
+// file maintained by Laird Connectivity
+//
+//******************************************************************************
+// Initialisation values for sregister caches ...
+//
+// These values are created by running the application "sreg.defaults.creation.sb"
+// and then copy/pasting it's output here - verbatim.
+//
+// This technique is used to reduce the size of the .uwc file of the main sb file
+//******************************************************************************
+
+//+++++ 8 bit registers+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//  Reg 100  Def = 9   Min = 0   Max = 127
+//  Reg 101  Def = 8   Min = -40   Max = 8
+//  Reg 102  Def = 3   Min = 0   Max = 3
+//  Reg 103  Def = 3   Min = 0   Max = 7
+//  Reg 104  Def = 0   Min = 0   Max = 127
+//  Reg 105  Def = 2   Min = 1   Max = 31
+//  Reg 106  Def = 8   Min = 1   Max = 127
+//  Reg 107  Def = 0   Min = 0   Max = 4
+//  Reg 108  Def = 0   Min = 0   Max = 3
+//  Reg 109  Def = -1   Min = -1  Max = 47
+//  Reg 110  Def = 3   Min = 1   Max = 120
+//  Reg 111  Def = 0   Min = -128  Max = 127
+//  Reg 112  Def = 1   Min = 0   Max = 1
+//  Reg 113  Def = -120  Min = -120  Max = -20
+//  Reg 114  Def = 5   Min = 1   Max = 20
+//  Reg 115  Def = 16  Min = 7   Max = 16
+//  Reg 116  Def = 0   Min = 0   Max = 1
+//  Reg 117  Def = 8   Min = -40   Max = 8
+//  Reg 118  Def = 0   Min = -128  Max = 127
+//  Reg 119  Def = 0   Min = -128  Max = 127
+//  Reg 120  Def = 1   Min = 0   Max = 2
+//  Reg 121  Def = 33  Min = 2   Max = 47
+//  Reg 122  Def = 1   Min = 0   Max = 1
+//  Reg 123  Def = 1   Min = 0   Max = 1
+//  Reg 124  Def = 1   Min = 0   Max = 1
+//  Reg 125  Def = 10  Min = 0   Max = 120
+//  Reg 126  Def = 20  Min = -100  Max = 100
+//  Reg 127  Def = 50  Min = 0   Max = 120
+//  Reg 128  Def = 0   Min = -128  Max = 127
+//  Reg 129  Def = 0   Min = -128  Max = 127
+//  Reg 130  Def = 0   Min = -128  Max = 127
+//  Reg 131  Def = 0   Min = -128  Max = 127
+//  Reg 132  Def = 0   Min = -128  Max = 127
+//  Reg 133  Def = 0   Min = -128  Max = 127
+//  Reg 134  Def = 0   Min = -128  Max = 127
+//  Reg 135  Def = 0   Min = -128  Max = 127
+//  Reg 136  Def = 0   Min = -128  Max = 127
+//  Reg 137  Def = 0   Min = -128  Max = 127
+//  Reg 138  Def = -1  Min = -1  Max = 47
+//  Reg 139  Def = -1  Min = -1  Max = 47
+//++++++16 bit registers++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//  Reg 200  Def = 8000  Min = 1000  Max = 20000
+//  Reg 201  Def = 250   Min = 20  Max = 10240
+//  Reg 202  Def = 0   Min = 0   Max = 2048
+//  Reg 203  Def = 0   Min = 0   Max = 2048
+//  Reg 204  Def = 384   Min = 256   Max = 4096
+//  Reg 205  Def = 4096  Min = 256   Max = 4096
+//  Reg 206  Def = 6000  Min = 100   Max = 32000
+//  Reg 207  Def = 0   Min = 0   Max = 32767
+//  Reg 208  Def = 250   Min = 20  Max = 10240
+//  Reg 209  Def = 512   Min = 256   Max = 2048
+//  Reg 210  Def = 0   Min = -32768  Max = 32767
+//  Reg 211  Def = 80  Min = 40  Max = 10240
+//  Reg 212  Def = 40  Min = 40  Max = 10240
+//  Reg 213  Def = 5000  Min = 100   Max = 30000
+//  Reg 214  Def = 125   Min = 50  Max = 2000
+//  Reg 215  Def = 512   Min = 0   Max = 2048
+//  Reg 216  Def = 512   Min = 0   Max = 2048
+//  Reg 217  Def = 0   Min = -32768  Max = 32767
+//  Reg 218  Def = 0   Min = -32768  Max = 32767
+//  Reg 219  Def = 0   Min = -32768  Max = 32767
+//++++++32 bit registers++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//  Reg 300  Def = 7500  Min = 7500  Max = 3998750
+//  Reg 301  Def = 15000   Min = 7500  Max = 3998750
+//  Reg 302  Def = 115200  Min = 1200  Max = 1000000
+//  Reg 303  Def = 8192  Min = 1   Max = 65535
+//  Reg 304  Def = 8193  Min = 1   Max = 65535
+//  Reg 305  Def = 8195  Min = 1   Max = 65535
+//  Reg 306  Def = 8194  Min = 1   Max = 65535
+//  Reg 307  Def = 0   Min = -2147483648   Max = 2147483647
+//  Reg 308  Def = 0   Min = -2147483648   Max = 2147483647
+//  Reg 309  Def = 0   Min = -2147483648   Max = 2147483647
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//------------------------------------------------------------------------------
+// Max Tx Power (dBm)                8
+// Max Tx Power (dBm)                -40
+//------------------------------------------------------------------------------
+//                  100+    0  1  2  3  4  5  6  7  8  9  0  1  2  3  4  5  6  7  8  9
+#define SREGINIT_VAL8_0  "\09\08\03\03\00\02\08\00\00\FF\03\00\01\88\05\10\00\08\00\00"
+#define SREGINIT_MIN8_0  "\00\D8\00\00\00\01\01\00\00\FF\01\80\00\88\01\07\00\D8\80\80"
+#define SREGINIT_MAX8_0  "\7F\08\03\07\7F\1F\7F\04\03\2F\78\7F\01\EC\14\10\01\08\7F\7F"
+//                  120+    0  1  2  3  4  5  6  7  8  9  0  1  2  3  4  5  6  7  8  9
+#define SREGINIT_VAL8_1  "\01\21\01\01\01\0A\14\32\00\00\00\00\00\00\00\00\00\00\FF\FF"
+#define SREGINIT_MIN8_1  "\00\02\00\00\00\00\9C\00\80\80\80\80\80\80\80\80\80\80\FF\FF"
+#define SREGINIT_MAX8_1  "\02\2F\01\01\01\78\64\78\7F\7F\7F\7F\7F\7F\7F\7F\7F\7F\2F\2F"
+//                  200+    0     1     2     3     4     5     6     7    8     9
+#define SREGINIT_VAL16_0 "\40\1F\FA\00\00\00\00\00\80\01\00\10\70\17\00\00\FA\00\00\02"
+#define SREGINIT_MIN16_0 "\E8\03\14\00\00\00\00\00\00\01\00\01\64\00\00\00\14\00\00\01"
+#define SREGINIT_MAX16_0 "\20\4E\00\28\00\08\00\08\00\10\00\10\00\7D\FF\7F\00\28\00\08"
+//                  210+    0     1     2     3     4     5     6     7    8     9
+#define SREGINIT_VAL16_1 "\00\00\50\00\28\00\88\13\7D\00\00\02\00\02\00\00\00\00\00\00"
+#define SREGINIT_MIN16_1 "\00\80\28\00\28\00\64\00\32\00\00\00\00\00\00\80\00\80\00\80"
+#define SREGINIT_MAX16_1 "\FF\7F\00\28\00\28\30\75\D0\07\00\08\00\08\FF\7F\FF\7F\FF\7F"
+//                  300+    0           1           2           3          4
+#define SREGINIT_VAL32_0 "\4C\1D\00\00\98\3A\00\00\00\C2\01\00\00\20\00\00\01\20\00\00"
+#define SREGINIT_MIN32_0 "\4C\1D\00\00\4C\1D\00\00\B0\04\00\00\01\00\00\00\01\00\00\00"
+#define SREGINIT_MAX32_0 "\1E\04\3D\00\1E\04\3D\00\40\42\0F\00\FF\FF\00\00\FF\FF\00\00"
+//                  305+    0           1           2           3          4
+#define SREGINIT_VAL32_1 "\03\20\00\00\02\20\00\00\00\00\00\00\00\00\00\00\00\00\00\00"
+#define SREGINIT_MIN32_1 "\01\00\00\00\01\00\00\00\00\00\00\80\00\00\00\80\00\00\00\80"
+#define SREGINIT_MAX32_1 "\FF\FF\00\00\FF\FF\00\00\FF\FF\FF\7F\FF\FF\FF\7F\FF\FF\FF\7F"
+//------------------------------------------------------------------------------

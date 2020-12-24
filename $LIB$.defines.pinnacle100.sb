@@ -1,0 +1,133 @@
+//#############################################################################
+// LibFile : "$LIB$.defines.cellular.sb"
+//#############################################################################
+//
+// It is very highly recommended that this file is NOT modified by non-Laird
+// Connectivity developers unless you request it to be updated in the master
+// file maintained by Laird Connectivity
+//
+//******************************************************************************
+// Definitions
+//******************************************************************************
+
+//Min & Max power capability
+#define MAX_TXPOWER_DBM                           8
+#define MIN_TXPOWER_DBM                           -40
+
+#define SIO_BUTTON1                               31    //M2.16  On devkit (Bootloader use)
+#define SIO_BUTTON2                                3    //M2.61  On devkit
+#define SIO_BUTTON3                                4    //M2.23  On devkit
+#define SIO_BUTTON4                                2    //M2.59  On devkit
+
+#define SIO_LED1                                  36    //M2.15  On devkit
+#define SIO_LED2                                  37    //M2.17  On devkit
+#define SIO_LED3                                  38    //M2.19  On devkit
+#define SIO_LED4                                  39    //M2.21  On devkit
+
+#define SIO_nAUTORUN                              33    //M2.41
+#define SIO_ALT_AUTORUN                            4    //M2.23  (BUTTON3)
+
+#define SIO_QSPI_CS                               17
+#define SIO_QSPI_CLK                              19
+#define SIO_QSPI_DIO0_MOSI                        20
+#define SIO_QSPI_DIO1_MISO                        21
+#define SIO_QSPI_DIO2                             22
+#define SIO_QSPI_DIO3                             23
+
+#define SIO_MUX_STATUS                            SIO_LED1  //M2.15  (LED1 on Devkit) MUST be a valid pin otherwise ONERROR will trigger
+#define SIO_MUX_CONTROL                           SIO_nAUTORUN    //M2.41  Same as nAutorun
+
+#define SIO_P002_AIN0                             SIO_BUTTON4
+#define SIO_P003_AIN1                             SIO_BUTTON2
+#define SIO_P004_AIN2                             SIO_BUTTON3
+//#define SIO_P005_AIN3                                 //       NOT EXPOSED IN PINNACLE
+#define SIO_P028_AIN4                             28    //M2.55
+#define SIO_P029_AIN5                             29    //M2.53
+#define SIO_P030_AIN6                             30    //M2.40
+#define SIO_P031_AIN7                             SIO_BUTTON1
+
+#define SIO_HLCTS_ECHO                            SIO_LED2
+#define SIO_TXON_ECHO                             SIO_LED3
+#define SIO_HL78_READY                            41          //M2.66 output low when HL78 is ready to accept AT commands
+#define SIO_DEF_LOW_PWR_EN                        -1          //Low Power Uart Close is disabled by default
+
+// 840 to HL78 interconnect sio pins  ( Outputs from 840 to HL)
+#define SIO_LTE_RESET                             47    //M2.71 (0 = Standard, 1 = Disconnect, INIT = 1)
+#define SIO_LTE_PWR_ON                            34    //M2.70 (0 = Standard, 1 = Disconnect, INIT = 1)
+#define SIO_LTE_WAKE                              45    //      (0 = Disconnect, 1 = Standard, INIT = 1)
+#define SIO_LTE_SHUTDOWN                          46    //      (0 = Standard, 1 = Disconnect, INIT = 1)
+#define SIO_LTE_UART1_DTR                         24    //      (0 = Standard, 1 = Disconnect, INIT = 0)
+#define SIO_LTE_VGPIO                             43    //M2.68
+#define SIO_LTE_GPIO2                             40    //M2.43
+#define SIO_LTE_UART1_DSR                         25    //M2.14
+#define SIO_LTE_GPIO6                             44    //M2.35
+
+// HL78 to 840 interconnect sio pins  ( Inputs to 840 from HL)
+#define SIO_LTE_TX_ON                             35    //M2.44 (no pull)
+
+#define SIO_NFC1                                  9     //M2.22
+#define SIO_NFC2                                  10    //M2.20
+
+//Max SIO number
+#define MAX_SIO_NUM                               47
+
+#define SIO_UART_RTS                              7     //M2.38
+#define SIO_UART_TXD                              8     //M2.34
+#define SIO_UART_CTS                              5     //M2.36
+#define SIO_UART_RXD                              6     //M2.32
+
+#define SIO_AUX_RTS                               13    //0D
+#define SIO_AUX_TXD                               14    //0E
+#define SIO_AUX_CTS                               15    //0F
+#define SIO_AUX_RXD                               16    //10
+
+//Alternate Aux Uart pins to enable UwTerminal/StringPlayer to simulate a HL78
+#define SIO_AUX_RTS_REGRTEST                      2     //M2.59   02
+#define SIO_AUX_TXD_REGRTEST                      3     //M2.61   03
+#define SIO_AUX_CTS_REGRTEST                      28    //M2.55   1C
+#define SIO_AUX_RXD_REGRTEST                      29    //M2.53   1D
+
+// Gpio Channel Binding macros
+#define BINDEVENT_MUX_CONTROL                     0
+#define  EVGPIOCHAN_MUX_CONTROL                     EVGPIOCHAN0
+#define BINDEVENT_LTE_TX_ON                       1
+#define  EVGPIOCHAN_LTE_TX_ON                       EVGPIOCHAN1
+#define BINDEVENT_LTE_VGPIO                       2
+#define  EVGPIOCHAN_LTE_VGPIO                       EVGPIOCHAN2
+#define BINDEVENT_SPARE_1                         3
+#define  EVGPIOCHAN_SPARE_1                         EVGPIOCHAN3
+#define BINDEVENT_LTE_GPIO2                       4
+#define  EVGPIOCHAN_LTE_GPIO2                       EVGPIOCHAN4
+#define BINDEVENT_LTE_UART1_DSR                   5
+#define  EVGPIOCHAN_LTE_UART1_DSR                   EVGPIOCHAN5
+#define BINDEVENT_LTE_GPIO6                       6
+#define  EVGPIOCHAN_LTE_GPIO6                       EVGPIOCHAN6
+#define BINDEVENT_LOWPWR_UART                     7
+#define  EVGPIOCHAN_LOWPWR_UART                     EVGPIOCHAN7
+
+#define ASSIGNEVENT_x1                            0
+#define  EVDETECTCHAN_x1                            EVDETECTCHAN0
+
+#define LTE_RESET_STARTUP_ASSERT_TIME_MS          50
+
+#define HFCLOCK_SWITCH_ENABLE_DEFAULT             20    //+2 degrees C
+#define HFCLOCK_SWITCH_ENABLE_MIN                 -100  //-10 degrees C
+#define HFCLOCK_SWITCH_ENABLE_MAX                 100   //+10 degrees C
+
+#define HFCLOCK_CHECK_TIME_DEFAULT                10    //Once every 10 minutes
+#define HFCLOCK_CHECK_TIME_MIN                    0     //Disabled
+#define HFCLOCK_CHECK_TIME_MAX                    120   //Once every 2 hours
+
+#define HFCLOCK_HYSTERESIS_DEFAULT                50    //5 degrees C
+#define HFCLOCK_HYSTERESIS_MIN                    0     //No hysteresis
+#define HFCLOCK_HYSTERESIS_MAX                    120   //12 degrees
+
+
+//******************************************************************************
+// Global Variable Declarations
+//******************************************************************************
+
+//******************************************************************************
+// Function and Subroutine definitions
+//******************************************************************************
+

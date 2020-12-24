@@ -1,0 +1,108 @@
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Copyright (c) 2018, Laird Connectivity                                     ++
+//                                                                            ++
+// Permission to use, copy, modify, and/or distribute this software for any   ++
+// purpose with or without fee is hereby granted, provided that the above     ++
+// copyright notice and this permission notice appear in all copies.          ++
+//                                                                            ++
+// THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES   ++
+// WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF           ++
+// MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR    ++
+// ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES     ++
+// WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN      ++
+// ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR ++
+// IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.                ++
+//                                                                            ++
+// SPDX-License-Identifier:ISC                                                ++
+//                                                                            ++
+// ************************************************************************** ++
+// A smartBASIC application that exposes an AT Interface to control a VSP     ++
+// or non-VSP connection and advertise or scan that will run on the Pinnacle  ++
+// modem with the following features:-                                        ++
+//    + AT+GCTM command enabled to query peer's GATT table schema             ++
+//    + If error handler called then module will reset and restart            ++
+//    + Long Range Connection capability enabled                              ++
+// ************************************************************************** ++
+//                                                                            ++
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++                                                                      ++
+// +++++  When UwTerminalX downloads the app to the module it will be saved    ++
+// +++++  as a file with filename $autorun$ which means it will run           ++
+// +++++  automatically on reset.                                             ++
+// +++++  The File System can be queried using the command AT+DIR             ++
+// +++++                                                                      ++
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//
+// -------------------
+// Application Version
+// -------------------
+#define AppVer                 "1.01"  //Application version (ATI33)
+//
+// -------------------
+// Application History
+// -------------------
+//
+//  1.01 (20 Jun 2019)
+//    * Changed SReg109 default to -1 so that by default there is no low power
+//      UART operation
+//
+//******************************************************************************
+
+//
+//******************************************************************************
+// Definitions
+//******************************************************************************
+
+//==============================================================================
+//The following can be modified by the customer to customise
+//==============================================================================
+#define ATI_RESPONSE_0                            "Pinnacle 100"
+#define ATI_RESPONSE_10                           "Laird Connectivity, (c)2019"
+
+#define AT_RESPONSE_OK                            "OK"
+#define AT_RESPONSE_ERROR                         "+CME ERROR: "
+
+//Default device name
+#define DEFAULT_DEVICE_NAME                       "Pinnacle100"
+
+//==============================================================================
+//The following can be modified by the customer to customise - but with care
+//==============================================================================
+//Maximum allowable size of strings (1024 maximum)
+#define MaxCmdStringSize                          256
+#define MaxAuxRxStringSize                        256
+
+//Maximum allowable size of the advertised device name (additional characters will be clipped off)
+//Do NOT set larger than 20
+#define MaxDevNameSize                            20
+
+//These are min/max connection intervals as peripheral, so basically accepts
+//whatever the master provides and will NOT trigger a connection parameter renegotiation
+#define CONN_INTERVAL_MIN_ASPERIPH_US             7500
+#define CONN_INTERVAL_MAX_ASPERIPH_US             999000
+
+//This defines the maximum number of characteristics we can manage (also see DEFAULT_ATTRIBUTE_SIZE further down)
+//Valid range 20 .. 244 (only tested up to 96)
+#define DLE_ATTRIBUTE_SIZE                        96
+
+//This defines the maximum number of characteristics we can manage
+#define MAX_CHARACTERISTICS                       24
+
+//This defines the maximum number of connections
+//Valid range 2..8
+#define MAX_CONNECTIONS                           8
+
+//For Low power mode
+// - minimum delay for inactivity on UART to go to close
+#define MIN_IDLE_TIMEOUT_MS                       100
+// - maximum delay for inactivity on UART to go to close
+#define MAX_IDLE_TIMEOUT_MS                       30000
+// - default delay for inactivity on UART to go to close
+#define DEF_IDLE_TIMEOUT_MS                       5000
+
+//This is the max time to wait after reset for HL to be ready for AT commands
+#define HL_MAX_STARTUP_TIME_MS                    10000
+
+//******************************************************************************
+// Import module specific defines maintained by Laird Connectivity
+//******************************************************************************
